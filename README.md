@@ -14,6 +14,11 @@ Talent matching platform. Aliya, its AI agent, connects companies with qualified
 - **Focus:** Agentic matching, evidence-based hiring, consent-first introductions
 - **Stack:** Cloudflare Workers, TypeScript
 
+### [PayBlue](https://payblue.app)
+Mobile-first EBT platform for Texas, built around biometric handshake transactions for SNAP, WIC, and TANF benefits.
+- **Focus:** Secure public-benefit payments, biometric verification
+- **Stack:** Rust, Axum, React
+
 ### [kai-dart](https://github.com/elliyeen/kai-dart)
 Smart-city and transit intelligence.
 - **Stack:** TypeScript

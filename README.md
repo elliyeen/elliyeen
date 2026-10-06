@@ -3,7 +3,7 @@
 Principal Enterprise AI & Strategy, based in Dallas, TX.
 Building secure AI systems, agentic workflows, and public-sector technology.
 
-[Elliyeen](https://www.elliyeen.com) · [Ahead](https://aheadjobs.com) · [PayBlue](https://payblue.app) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
+[Elliyeen](https://www.elliyeen.com) · [Ahead](https://aheadjobs.com) · [PayBlue](https://payblue.app) · [Kai DART](https://elliyeen.github.io/kai-dart/) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
 
 ---
 
@@ -20,7 +20,7 @@ Mobile-first EBT platform for Texas, built around biometric handshake transactio
 - **Stack:** Rust, Axum, React
 
 ### [kai-dart](https://github.com/elliyeen/kai-dart)
-Smart-city and transit intelligence.
+Smart-city and transit intelligence. [Live site](https://elliyeen.github.io/kai-dart/)
 - **Stack:** TypeScript
 
 ### [qaf](https://github.com/elliyeen/qaf)

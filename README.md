@@ -3,13 +3,13 @@
 Principal Enterprise AI & Strategy, based in Dallas, TX.
 Building secure AI systems, agentic workflows, and public-sector technology.
 
-[Website](https://www.elliyeen.com) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
+[Elliyeen](https://www.elliyeen.com) · [Ahead](https://aheadjobs.com) · [PayBlue](https://payblue.app) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
 
 ---
 
 ## Flagship Systems
 
-### Ahead
+### [Ahead](https://aheadjobs.com)
 Talent matching platform. Aliya, its AI agent, connects companies with qualified people based on what needs to get done and who has the evidence to do it, with candidate consent built into every introduction.
 - **Focus:** Agentic matching, evidence-based hiring, consent-first introductions
 - **Stack:** Cloudflare Workers, TypeScript

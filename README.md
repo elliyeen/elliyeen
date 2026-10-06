@@ -27,6 +27,11 @@ Smart-city and transit intelligence. [Live site](https://elliyeen.github.io/kai-
 Word-level Quranic data access layer, exposed as SQLite, a REST API, and an MCP server.
 - **Stack:** Rust, SQLite, Model Context Protocol
 
+### [Savannah Personal Care Services](https://elliyeen.github.io/savannah-pcs/)
+Website for a CNA-founded home care provider serving Savannah and coastal Georgia, covering transitional care, daily living assistance, dementia care support, and respite care.
+- **Focus:** Family-first care intake, same-day assessment, caregiver matching
+- **Stack:** HTML
+
 ---
 
 ## Technical Disciplines

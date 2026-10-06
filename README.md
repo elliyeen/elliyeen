@@ -45,4 +45,10 @@ Website for a CNA-founded home care provider serving Savannah and coastal Georgi
 
 ---
 
+## Connect
+
+[LinkedIn](https://www.linkedin.com/in/abbasabdullah)
+
+---
+
 <sub>Dallas, TX · MBA Candidate, The University of Chicago Booth School of Business</sub>

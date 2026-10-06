@@ -3,6 +3,8 @@
 Principal Enterprise AI & Strategy, based in Dallas, TX.
 Building secure AI systems, agentic workflows, and public-sector technology.
 
+[Website](https://www.elliyeen.com) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
+
 ---
 
 ## Flagship Systems

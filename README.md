@@ -1,29 +1,36 @@
-# Abdullah
+# Abbas Abdullah
 
-**Principal Enterprise AI & Strategy**
+Principal Enterprise AI & Strategy, based in Dallas, TX.
+Building secure AI systems, agentic workflows, and public-sector technology.
 
-Building secure AI systems that move from prototype to production.
+---
 
-`AI Agents` · `Cybersecurity` · `Cloud` · `Public Sector` · `Automation`
+## Flagship Systems
 
-## About
+### Ahead
+Talent matching platform. Aliya, its AI agent, connects companies with qualified people based on what needs to get done and who has the evidence to do it, with candidate consent built into every introduction.
+- **Focus:** Agentic matching, evidence-based hiring, consent-first introductions
+- **Stack:** Cloudflare Workers, TypeScript
 
-I design and deliver enterprise AI, agentic automation, cybersecurity, and digital transformation systems. I connect strategy, architecture, AI, security, and implementation to measurable outcomes.
+### [kai-dart](https://github.com/elliyeen/kai-dart)
+Smart-city and transit intelligence.
+- **Stack:** TypeScript
 
-## Currently building
+### [qaf](https://github.com/elliyeen/qaf)
+Word-level Quranic data access layer, exposed as SQLite, a REST API, and an MCP server.
+- **Stack:** Rust, SQLite, Model Context Protocol
 
-- **Ahead**: an AI-powered workforce platform that connects companies with qualified people, with candidate consent built into every introduction.
-- **[kai-dart](https://github.com/elliyeen/kai-dart)**: smart-city and transit intelligence.
+---
 
-## Focus areas
+## Technical Disciplines
 
-| | |
-|---|---|
-| **Enterprise AI** | Agentic workflows, LLM orchestration, human-in-the-loop, evaluation, observability, AI governance |
-| **Security** | Zero Trust, NIST CSF, OWASP, IAM, secure SDLC, LLM security |
-| **Architecture** | Cloudflare Workers, TypeScript, Rust, Python, SQL, GitHub Actions |
-| **Public sector** | Federal, state, and local government, transit, veteran technology |
+| Domain | Core Stack |
+| :--- | :--- |
+| **Systems & Backends** | Rust (`tokio`, `axum`), TypeScript, Node.js, Python |
+| **Agentic & Protocols** | Model Context Protocol (MCP), Claude Code, human-in-the-loop workflows |
+| **Infrastructure** | Cloudflare Workers, Pages, D1, GitHub Actions |
+| **Security** | Zero Trust, NIST CSF, OWASP, IAM, secure SDLC |
 
-## Mission
+---
 
-Turn AI prototypes into secure, measurable production systems.
+<sub>Dallas, TX · MBA Candidate, The University of Chicago Booth School of Business</sub>

@@ -3,7 +3,7 @@
 Principal Enterprise AI & Strategy, based in Dallas, TX.
 Building secure AI systems, agentic workflows, and public-sector technology.
 
-[Elliyeen](https://www.elliyeen.com) · [Ahead](https://aheadjobs.com) · [PayBlue](https://payblue.app) · [Kai DART](https://elliyeen.github.io/kai-dart/) · [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
+[Elliyeen](https://www.elliyeen.com) · [Ahead](https://aheadjobs.com) · [PayBlue](https://payblue.app) · [Kai DART](https://elliyeen.github.io/kai-dart/) · [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/)
 
 ---
 

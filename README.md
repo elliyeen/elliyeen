@@ -41,14 +41,10 @@ Website for a CNA-founded home care provider serving Savannah and coastal Georgi
 | **Systems & Backends** | Rust (`tokio`, `axum`), TypeScript, Node.js, Python |
 | **Agentic & Protocols** | Model Context Protocol (MCP), Claude Code, human-in-the-loop workflows |
 | **Infrastructure** | Cloudflare Workers, Pages, D1, GitHub Actions |
-| **Security** | Zero Trust, NIST CSF, OWASP, IAM, secure SDLC |
+| **Security** | OWASP, IAM, secure SDLC |
 
 ---
 
 ## Connect
 
 [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
-
----
-
-<sub>Dallas, TX · MBA Candidate, The University of Chicago Booth School of Business</sub>

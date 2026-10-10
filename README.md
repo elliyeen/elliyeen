@@ -13,7 +13,7 @@ I turn business problems into secure, measurable AI and software systems, from d
 | **Problem** | Adding smart-card (CAC/PIV) sign-in to an existing web application without trusting unverified identity headers. | Matching companies and talent on evidence of what needs to get done, with candidate consent before any introduction. |
 | **Approach** | Trust boundary at the load balancer, header provenance checks, certificate chain and CRL validation, session controls. Documented in ADRs and a threat model. | Agentic matching with deterministic filtering before AI, human approval gates, and an audit trail. Documented in ADRs. |
 | **Status** | Public reference implementation. Synthetic identities and certificates only. Not a production deployment. | Live product. Source is private. |
-| **Evidence** | [Tests](https://github.com/elliyeen/cac-piv-pki-authentication/tree/master/reference-impl/src), [threat model](https://github.com/elliyeen/cac-piv-pki-authentication/blob/master/docs/THREAT_MODEL.md), [ADRs](https://github.com/elliyeen/cac-piv-pki-authentication/tree/master/adr) | [aheadjobs.com](https://aheadjobs.com) |
+| **Evidence** | [Tests](https://github.com/elliyeen/cac-piv-pki-authentication/tree/master/reference-impl/src), [ADRs](https://github.com/elliyeen/cac-piv-pki-authentication/tree/master/adr), [5-minute walkthrough](https://github.com/elliyeen/cac-piv-pki-authentication/blob/master/docs/WALKTHROUGH.md). Run it yourself: `pnpm install && pnpm demo` in `reference-impl/` | [aheadjobs.com](https://aheadjobs.com) |
 | **Stack** | TypeScript, Next.js, PKI/X.509 | TypeScript, Cloudflare Workers |
 
 Known limitations are listed in each project, not hidden. For example, revocation checking in the CAC/PIV reference covers CRLs only.

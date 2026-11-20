@@ -4,8 +4,6 @@ I build secure, measurable AI and software systems, from discovery and architect
 
 [Website](https://www.elliyeen.com) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah) · [Work with me](WORK_WITH_US.md)
 
-This is my personal engineering profile: the proof, with limits stated. Product pages for Elliyeen LLC live on [elliyeen.com](https://www.elliyeen.com).
-
 ## Where to start
 
 - **Forward deployed / enterprise delivery:** [Route A](docs/github-portfolio/routes/forward-deployed-engineer.md)

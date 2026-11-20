@@ -66,9 +66,10 @@ No existing issues were found for this effort, so nothing was duplicated.
 ## Findings that need an owner decision
 
 1. **No featured repo has branch protection or auto-merge.** Per the engineering standard, auto-merge is therefore not available and each merge here is a manual, recorded action. Enabling protection is a settings change that was not made without approval.
-2. **A public `screenwriter` repository exists.** It is a public snapshot of the Screenwriter application source (release 0.6.3, last pushed 2026-11-16, about 2.4 MB). The previous profile README said Screenwriter's source is private; the active repository (`internal_screenwriter`) is private. Both statements cannot be left as they were. This work corrects the wording to describe the public snapshot honestly. **Visibility was not changed** (out of scope for this effort). The owner should decide whether the snapshot should stay public.
+2. **A public `screenwriter` repository exists.** It is a public snapshot of the Screenwriter application source (release 0.6.3, last pushed 2026-11-16, about 2.4 MB). The previous profile README said Screenwriter's source is private; the active repository (`internal_screenwriter`) is private and ahead of the snapshot. **Resolved:** the owner's 2026-11-19 product decision (Notion handoff, SEO-02A) names `elliyeen/screenwriter` as the intended public repository, so the profile links it and describes it as a snapshot. Visibility was not changed.
 3. **`enterprise-security-agent` and `ai_career_agents` have thin READMEs.** `ai_career_agents` is a one-line stub and is not featured on that basis.
-4. **Pinned repositories cannot be set through the API.** Manual steps are in the SEO-02 report.
+4. **`qaf` CI is failing.** The last three runs of its `ci.yml` workflow (2026-06-14 and 2026-07-25) concluded `failure`. It is not featured as evidence until fixed.
+5. **Pinned repositories cannot be set through the API.** Manual steps are in the SEO-02 report.
 
 ## Secret scan (public repos being featured)
 

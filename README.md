@@ -52,4 +52,4 @@ Define the failure and the acceptance criteria first. Build the smallest thing t
 
 ## Contact
 
-[LinkedIn](https://www.linkedin.com/in/abbasabdullah) · [Open an issue](https://github.com/elliyeen/elliyeen/issues/new/choose). I am not advertising open positions.
+[LinkedIn](https://www.linkedin.com/in/abbasabdullah)

@@ -1,8 +1,21 @@
 <img src="banner.png" alt="Forward Deployed Engineering: Enterprise AI, agentic systems, secure software delivery" width="100%">
 
-I turn business problems into secure, measurable AI and software systems, from discovery and architecture through implementation, testing and handoff. Based in Dallas, TX.
+I turn business problems into secure, measurable AI and software systems, from discovery and architecture through implementation, testing and handoff., with a focus on securing multi-agent AI systems. Based in Dallas, TX.
 
 [Website](https://www.elliyeen.com) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
+
+---
+
+## Now featuring: KAI × DART
+
+**[KAI](https://www.elliyeen.com/dart/)** is a proposed station-intelligence layer for Dallas transit: station and shelter quality, contractor accountability, and independently verified outcomes. It is designed to complement existing asset systems such as Maximo, not replace them.
+
+- **[Try the live demo](https://www.elliyeen.com/dart/)**: a guided walkthrough from inspection to work order to independent verification, across 115 station-line records.
+- **The KAI loop**: Observe, Decide, Act, Verify, Learn. Plain rules, not a machine-learning model.
+- **[Source](https://github.com/elliyeen/kai-dart)**: Next.js 16, React 19, TypeScript, Tailwind v4. CI runs lint, typecheck, unit tests, and a 540-test Playwright and axe suite across five browsers.
+- **[Recent activity](https://github.com/elliyeen?tab=overview&from=2026-11-01&to=2026-11-20)**: November 2026 contributions.
+
+Status: a static demonstration with synthetic data. No live DART data, no DART endorsement or integration, and pilot terms are Elliyeen proposals, not DART-approved.
 
 ---
 
@@ -28,14 +41,14 @@ Known limitations are listed in each project, not hidden. For example, revocatio
 
 | Domain | Core stack |
 | :--- | :--- |
-| **Systems and backends** | Rust (`tokio`, `axum`), TypeScript, Node.js, Python |
+| **Systems and backends** | Rust (`tokio`, `axum`), TypeScript, Node.js, Python, Bash |
 | **Agentic and protocols** | Model Context Protocol (MCP), Claude Code, human-in-the-loop workflows |
 | **Infrastructure** | Cloudflare Workers, Pages, D1, GitHub Actions |
-| **Security** | OWASP, IAM, secure SDLC |
+| **Security** | Agentic AI security (OWASP Top 10 for LLMs, deterministic filtering before AI, human-approval gates, audit trails), IAM, PKI/X.509, threat modeling, ADRs, data-loss-prevention policy and data inventory, secure SDLC, dependency auditing in CI |
 
 ## Other public work
 
-[qaf](https://github.com/elliyeen/qaf) (Rust, SQLite, MCP server) · [kai-dart](https://github.com/elliyeen/kai-dart) · [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/)
+[qaf](https://github.com/elliyeen/qaf) (Rust, SQLite, MCP server) · [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/)
 
 ## Connect
 

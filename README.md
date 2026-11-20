@@ -48,7 +48,7 @@ Define the failure and the acceptance criteria first. Build the smallest thing t
 
 ## Other public work
 
-[qaf](https://github.com/elliyeen/qaf) (Rust, SQLite, REST API, MCP server; its CI is currently failing) · [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/)
+[Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/)
 
 ## Contact
 

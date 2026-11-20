@@ -1,0 +1,214 @@
+{
+ "captured": "2026-11-20",
+ "profile_main_sha": "c9b8db3e3ab701574a1536ce85b67f182cc84d37",
+ "public_repos": [
+  {
+   "name": "elliyeen",
+   "description": "Profile README",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-11-20"
+  },
+  {
+   "name": "factory-sandbox",
+   "description": "Synthetic sandbox for engineering factory certification (no real code or secrets)",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-11-18"
+  },
+  {
+   "name": "screenwriter",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-11-16"
+  },
+  {
+   "name": "elliyeen-get-started",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "master",
+   "last_push": "2026-11-08"
+  },
+  {
+   "name": "review-8f96d821",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-11-07"
+  },
+  {
+   "name": "kai-dart",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-11-07"
+  },
+  {
+   "name": "cleared-public",
+   "description": "Reproducible benchmark of a payment-authorization checker: baseline, one improvement, holdouts, safety gates (synthetic data only)",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-11-02"
+  },
+  {
+   "name": "cac-piv-pki-authentication",
+   "description": "Elliyeen LLC - CAC/PIV PKI Authentication Reference Implementation (Public Portfolio)",
+   "topics": [],
+   "fork": false,
+   "default_branch": "master",
+   "last_push": "2026-10-26"
+  },
+  {
+   "name": "enterprise-security-agent",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-10-11"
+  },
+  {
+   "name": "rea",
+   "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+   "topics": [],
+   "fork": true,
+   "default_branch": "main",
+   "last_push": "2026-10-11"
+  },
+  {
+   "name": "elliyeen-naval-portfolio",
+   "description": "Interactive naval engineering and cybersecurity portfolio",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-10-10"
+  },
+  {
+   "name": "savannah-pcs",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-07-26"
+  },
+  {
+   "name": "g3-girls-flag-football",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "master",
+   "last_push": "2026-07-26"
+  },
+  {
+   "name": "ai_career_agents",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-07-26"
+  },
+  {
+   "name": "humanlayer",
+   "description": "The best way to get AI coding agents to solve hard problems in complex codebases.",
+   "topics": [],
+   "fork": true,
+   "default_branch": "main",
+   "last_push": "2026-07-25"
+  },
+  {
+   "name": "tradingview-mcp-jackson",
+   "description": "AI-assisted TradingView chart analysis \u2014 connect Claude Code to your TradingView Desktop for personal workflow automation",
+   "topics": [],
+   "fork": true,
+   "default_branch": "main",
+   "last_push": "2026-07-25"
+  },
+  {
+   "name": "qaf",
+   "description": "Word-level Quranic data access layer \u2014 SQLite, REST API, and MCP server",
+   "topics": [],
+   "fork": false,
+   "default_branch": "master",
+   "last_push": "2026-07-25"
+  },
+  {
+   "name": "associatedtrainingservices",
+   "description": "Hands on heavy equipment training program",
+   "topics": [],
+   "fork": false,
+   "default_branch": "master",
+   "last_push": "2026-07-02"
+  },
+  {
+   "name": "protobuf",
+   "description": "Protocol Buffers - Google's data interchange format",
+   "topics": [],
+   "fork": true,
+   "default_branch": "main",
+   "last_push": "2026-04-24"
+  },
+  {
+   "name": "open-multi-agent",
+   "description": "Production-grade multi-agent orchestration framework. Model-agnostic, supports team collaboration, task scheduling, and inter-agent communication.",
+   "topics": [],
+   "fork": true,
+   "default_branch": "main",
+   "last_push": "2026-04-01"
+  },
+  {
+   "name": "collection-claude-code-source-code",
+   "description": "\ud83d\udd25 A collection of the newest Claude Code open source",
+   "topics": [],
+   "fork": true,
+   "default_branch": "main",
+   "last_push": "2026-04-01"
+  },
+  {
+   "name": "claude-code-source-code-leak",
+   "description": "Claude Code Snapshot for Research. All original source code is the property of Anthropic.",
+   "topics": [],
+   "fork": true,
+   "default_branch": "main",
+   "last_push": "2026-03-31"
+  },
+  {
+   "name": "claude-code",
+   "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. All original source code is the property of Anthropic.",
+   "topics": [],
+   "fork": true,
+   "default_branch": "main",
+   "last_push": "2026-03-31"
+  },
+  {
+   "name": "cakedup",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-02-19"
+  },
+  {
+   "name": "test",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "main",
+   "last_push": "2026-02-01"
+  },
+  {
+   "name": "linkedin",
+   "description": "",
+   "topics": [],
+   "fork": false,
+   "default_branch": "",
+   "last_push": "2026-01-27"
+  }
+ ]
+}

@@ -1,10 +1,8 @@
-# Engineering secure AI systems that work in the real world.
+# Engineering secure Enterprise AI systems at scale.
 
 I build secure, measurable AI and software systems, from discovery and architecture through implementation, testing and handoff, with a focus on securing agent-based systems. Dallas, TX.
 
 [Website](https://www.elliyeen.com) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah) · [Work with me](WORK_WITH_US.md)
-
-This is my personal engineering profile: the proof, with limits stated. Product pages for Elliyeen LLC live on [elliyeen.com](https://www.elliyeen.com).
 
 ## Where to start
 
@@ -48,8 +46,8 @@ Define the failure and the acceptance criteria first. Build the smallest thing t
 
 ## Other public work
 
-[qaf](https://github.com/elliyeen/qaf) (Rust, SQLite, REST API, MCP server; its CI is currently failing) · [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/)
+[Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/)
 
 ## Contact
 
-[LinkedIn](https://www.linkedin.com/in/abbasabdullah) · [Open an issue](https://github.com/elliyeen/elliyeen/issues/new/choose). I am not advertising open positions.
+[LinkedIn](https://www.linkedin.com/in/abbasabdullah)

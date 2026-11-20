@@ -46,6 +46,7 @@ Known limitations are listed in each project, not hidden. For example, revocatio
 | **Agentic and protocols** | Model Context Protocol (MCP), Claude Code, human-in-the-loop workflows |
 | **Infrastructure** | Cloudflare Workers, Pages, D1, GitHub Actions |
 | **Security** | Agentic AI security (OWASP Top 10 for LLMs, deterministic filtering before AI, human-approval gates, audit trails), IAM, PKI/X.509, threat modeling, ADRs, data-loss-prevention policy and data inventory, secure SDLC, dependency auditing in CI |
+| **Governance and compliance** | NIST AI RMF, ISO 27001, SOC 2, HIPAA, PCI-DSS, FedRAMP, CMMC |
 
 ## Other public work
 

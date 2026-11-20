@@ -1,6 +1,6 @@
 <img src="banner.png" alt="Forward Deployed Engineering: Enterprise AI, agentic systems, secure software delivery" width="100%">
 
-I turn business problems into secure, measurable AI and software systems, from discovery and architecture through implementation, testing and handoff. Based in Dallas, TX.
+I turn business problems into secure, measurable AI and software systems, from discovery and architecture through implementation, testing and handoff., with a focus on securing multi-agent AI systems. Based in Dallas, TX.
 
 [Website](https://www.elliyeen.com) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah)
 
@@ -41,10 +41,10 @@ Known limitations are listed in each project, not hidden. For example, revocatio
 
 | Domain | Core stack |
 | :--- | :--- |
-| **Systems and backends** | Rust (`tokio`, `axum`), TypeScript, Node.js, Python |
+| **Systems and backends** | Rust (`tokio`, `axum`), TypeScript, Node.js, Python, Bash |
 | **Agentic and protocols** | Model Context Protocol (MCP), Claude Code, human-in-the-loop workflows |
 | **Infrastructure** | Cloudflare Workers, Pages, D1, GitHub Actions |
-| **Security** | OWASP, IAM, secure SDLC |
+| **Security** | Agentic AI security (OWASP Top 10 for LLMs, deterministic filtering before AI, human-approval gates, audit trails), IAM, PKI/X.509, threat modeling, ADRs, data-loss-prevention policy and data inventory, secure SDLC, dependency auditing in CI |
 
 ## Other public work
 

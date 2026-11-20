@@ -1,4 +1,4 @@
-# Engineering secure AI systems that work in the real world.
+# Engineering secure Enterprise AI systems at scale.
 
 I build secure, measurable AI and software systems, from discovery and architecture through implementation, testing and handoff, with a focus on securing agent-based systems. Dallas, TX.
 

@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce)" srcset="assets/splitflap-static.png">
-    <img src="assets/splitflap.gif" width="804" alt="Animated split-flap board labeled ELLIYEEN. It cycles through: PEACE WORLD! I'M ABDULLAH; a tropical beach at sunset; the Earth; a Formula 1 car driving left to right; a DART light-rail train moving right to left; then WE BUILD IN Rust, TypeScript, JavaScript, HTML, Python, Go and CSS. The loop lasts 60 seconds.">
+    <img src="assets/splitflap.gif" width="804" alt="Animated split-flap board labeled ELLIYEEN. It cycles through: PEACE WORLD! I'M ABDULLAH; DO NO HARM.; ALWAYS DO WHAT IS RIGHT.; the quote "Culture eats strategy for breakfast." with the attribution Mark Fields; "The joint doesn't know that it will be visable."; a tropical beach at sunset; the Earth; a Formula 1 car driving left to right; a DART light-rail train moving right to left; then WE BUILD IN Rust, TypeScript, JavaScript, HTML, Python, Go and CSS. The loop lasts 80 seconds.">
   </picture>
 </p>
 

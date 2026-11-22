@@ -11,7 +11,7 @@
 
 Over 20 years of combined experience across military service, information technology, and super intelligence. Dallas, TX. Interested in remote forward-deployed roles.
 
-[Website](https://www.elliyeen.com) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah) · [Work with me](WORK_WITH_US.md)
+[Website](https://www.elliyeen.com) · [**Work with me: send me a message on LinkedIn**](https://www.linkedin.com/in/abbasabdullah)
 
 ## How I work
 
@@ -56,4 +56,4 @@ Every capability I claim is mapped to something you can open in the [skills-to-e
 
 ## Contact
 
-[LinkedIn](https://www.linkedin.com/in/abbasabdullah) · [Website](https://www.elliyeen.com) · [Work with me](WORK_WITH_US.md)
+[**Work with me: send me a message on LinkedIn**](https://www.linkedin.com/in/abbasabdullah) · [Website](https://www.elliyeen.com)

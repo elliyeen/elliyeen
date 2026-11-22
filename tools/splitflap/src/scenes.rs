@@ -8,7 +8,8 @@ pub const COLS: usize = 48;
 pub const TW: usize = 16; // tile width in px
 pub const TH: usize = 20; // tile height in px
 pub const SCENE_SECS: f64 = 5.0;
-pub const LOOP_SECS: f64 = 60.0;
+pub const LOOP_SECS: f64 = 80.0;
+pub const SCENES: usize = 16;
 
 /// Ordered language loop (spec: RUST → TYPESCRIPT → JAVASCRIPT → HTML → PYTHON → GO → CSS).
 pub const LANGS: [(&str, Rgb); 7] = [
@@ -23,6 +24,7 @@ pub const LANGS: [(&str, Rgb); 7] = [
 
 pub const ORANGE: Rgb = [0xBF, 0x57, 0x00]; // Texas burnt orange
 pub const WHITE: Rgb = [0xFF, 0xFF, 0xFF];
+pub const ORANGE_LIGHT: Rgb = [0xFF, 0x9A, 0x3C];
 const INK: Rgb = [0x11, 0x13, 0x12];
 const GREEN: Rgb = [0x33, 0xFF, 0x66];
 
@@ -31,11 +33,13 @@ pub struct Tile {
     pub bg: Rgb,
     pub ch: char,
     pub fg: Rgb,
+    /// 9-row glyph cell so lowercase letters and descenders render (sentence-case text)
+    pub tall: bool,
 }
 
 impl Tile {
     pub fn solid(bg: Rgb) -> Tile {
-        Tile { bg, ch: ' ', fg: WHITE }
+        Tile { bg, ch: ' ', fg: WHITE, tall: false }
     }
 }
 
@@ -57,7 +61,7 @@ fn set_tile(b: &mut Board, r: i64, c: i64, t: Tile) {
 
 fn put_text(b: &mut Board, r: usize, c: usize, s: &str, fg: Rgb, bg: Rgb) {
     for (i, ch) in s.chars().enumerate() {
-        set_tile(b, r as i64, (c + i) as i64, Tile { bg, ch, fg });
+        set_tile(b, r as i64, (c + i) as i64, Tile { bg, ch, fg, tall: false });
     }
 }
 
@@ -120,15 +124,19 @@ pub fn hash(r: usize, c: usize) -> u32 {
 /// Returns (target board, seconds since the current scene/slot began).
 pub fn board_at(t: f64) -> (Board, f64) {
     let t = t.rem_euclid(LOOP_SECS);
-    let idx = ((t / SCENE_SECS) as usize).min(11);
+    let idx = ((t / SCENE_SECS) as usize).min(SCENES - 1);
     let tl = t - idx as f64 * SCENE_SECS;
     let b = match idx {
         0 => peace(),
-        1 => beach(tl),
-        2 => earth(tl),
-        3 => f1(tl),
-        4 => dart(tl),
-        i => language(i - 5, tl),
+        1 => values(&[(5, "DO NO HARM.", WHITE)]),
+        2 => values(&[(5, "ALWAYS DO WHAT IS RIGHT.", WHITE)]),
+        3 => values(&[(4, "Culture eats strategy for breakfast.", WHITE), (7, "\u{2014} Mark Fields", ORANGE_LIGHT)]),
+        4 => values(&[(4, "The joint doesn't know", WHITE), (6, "that it will be visable.", WHITE)]),
+        5 => beach(tl),
+        6 => earth(tl),
+        7 => f1(tl),
+        8 => dart(tl),
+        i => language(i - 9, tl),
     };
     (b, tl)
 }
@@ -156,6 +164,25 @@ pub fn peace() -> Board {
     let mid = ROWS / 2;
     put_text(&mut b, mid - 1, 18, "PEACE WORLD!", WHITE, ORANGE);
     put_text(&mut b, mid + 1, 18, "I'M ABDULLAH", WHITE, ORANGE);
+    b
+}
+
+// ---------- 1b. Values messages ----------
+/// Restrained scene: dark tiles, orange rules above and below, high-contrast
+/// sentence-case lettering. `lines` = (row, text, colour); text is centred.
+fn values(lines: &[(usize, &str, Rgb)]) -> Board {
+    let mut b = new_board(INK);
+    for c in 4..COLS - 4 {
+        set(&mut b, 1, c as i64, ORANGE);
+        set(&mut b, ROWS as i64 - 2, c as i64, ORANGE);
+    }
+    for &(row, text, fg) in lines {
+        let n = text.chars().count();
+        let start = (COLS - n) / 2;
+        for (i, ch) in text.chars().enumerate() {
+            set_tile(&mut b, row as i64, (start + i) as i64, Tile { bg: INK, ch, fg, tall: true });
+        }
+    }
     b
 }
 
@@ -363,7 +390,7 @@ fn f1(tl: f64) -> Board {
     for i in 0..3usize {
         let lit = ((tl * 3.0) as usize) % 4 > i;
         let col = if lit { [0xFF, 0x4A, 0x2B] } else { [0x5A, 0x1E, 0x1A] };
-        set_tile(&mut b, (ROWS - 3) as i64, (36 + i * 2) as i64, Tile { bg: asphalt, ch: '>', fg: col });
+        set_tile(&mut b, (ROWS - 3) as i64, (36 + i * 2) as i64, Tile { bg: asphalt, ch: '>', fg: col, tall: false });
     }
     let x = -28.0 + 76.0 * (tl / 5.0);
     let xi = x.floor() as i64;
@@ -393,8 +420,8 @@ fn f1(tl: f64) -> Board {
         'G' => Some(Tile::solid([0x9A, 0x9A, 0x9A])),
         'W' => Some(Tile::solid(WHITE)),
         'Y' => Some(Tile::solid([0xFF, 0xD2, 0x1F])),
-        'f' => Some(Tile { bg: [0xE1, 0x06, 0x00], ch: 'F', fg: WHITE }),
-        'n' => Some(Tile { bg: [0xE1, 0x06, 0x00], ch: '1', fg: WHITE }),
+        'f' => Some(Tile { bg: [0xE1, 0x06, 0x00], ch: 'F', fg: WHITE, tall: false }),
+        'n' => Some(Tile { bg: [0xE1, 0x06, 0x00], ch: '1', fg: WHITE, tall: false }),
         _ => None,
     });
     b
@@ -435,7 +462,7 @@ fn dart(tl: f64) -> Board {
     for i in 0..4usize {
         let lit_ = ((tl * 3.0) as usize) % 5 > i;
         let col = if lit_ { [0xFF, 0xC7, 0x2C] } else { [0x5A, 0x4A, 0x20] };
-        set_tile(&mut b, 1, (4 + (3 - i) * 2) as i64, Tile { bg: sky, ch: '<', fg: col });
+        set_tile(&mut b, 1, (4 + (3 - i) * 2) as i64, Tile { bg: sky, ch: '<', fg: col, tall: false });
     }
     let car0 = ["BBBBBBBBBBBBBB", "WWWBWWBWWBWWBB", "YYYYYYYYYYYYYY", "BKKBBBBBBBBKKB"];
     let car1 = ["BBBBBBBBBBBBBB", "BWWBWWBWWBWWBB", "YYYYdartYYYYYY", "BKKBBBBBBBBKKB"];
@@ -462,10 +489,10 @@ fn dart(tl: f64) -> Board {
         'W' => Some(Tile::solid(WHITE)),
         'Y' => Some(Tile::solid(yel)),
         'K' => Some(Tile::solid([0x10, 0x10, 0x10])),
-        'd' => Some(Tile { bg: yel, ch: 'D', fg: navy }),
-        'a' => Some(Tile { bg: yel, ch: 'A', fg: navy }),
-        'r' => Some(Tile { bg: yel, ch: 'R', fg: navy }),
-        't' => Some(Tile { bg: yel, ch: 'T', fg: navy }),
+        'd' => Some(Tile { bg: yel, ch: 'D', fg: navy, tall: false }),
+        'a' => Some(Tile { bg: yel, ch: 'A', fg: navy, tall: false }),
+        'r' => Some(Tile { bg: yel, ch: 'R', fg: navy, tall: false }),
+        't' => Some(Tile { bg: yel, ch: 'T', fg: navy, tall: false }),
         _ => None,
     });
     b
@@ -486,15 +513,15 @@ fn language(k: usize, tl: f64) -> Board {
         set(&mut b, 1, 3 + i as i64 * 2, *col);
     }
     let prompt_bg: Rgb = [0x0F, 0x3A, 0x1F];
-    set_tile(&mut b, ROWS as i64 / 2, 5, Tile { bg: prompt_bg, ch: '>', fg: GREEN });
-    set_tile(&mut b, ROWS as i64 / 2, 6, Tile { bg: prompt_bg, ch: '_', fg: GREEN });
+    set_tile(&mut b, ROWS as i64 / 2, 5, Tile { bg: prompt_bg, ch: '>', fg: GREEN, tall: false });
+    set_tile(&mut b, ROWS as i64 / 2, 6, Tile { bg: prompt_bg, ch: '_', fg: GREEN, tall: false });
     let prefix = "WE BUILD IN ";
     put_text(&mut b, ROWS / 2, 9, prefix, [0xF2, 0xF2, 0xF2], win);
     let start = 9 + prefix.len();
     let len = name.len();
     let n = if tl < 0.5 { 0 } else { (((tl - 0.5) / 0.11) as usize + 1).min(len) };
     for (i, ch) in name.chars().take(n).enumerate() {
-        set_tile(&mut b, ROWS as i64 / 2, (start + i) as i64, Tile { bg: colour, ch, fg: INK });
+        set_tile(&mut b, ROWS as i64 / 2, (start + i) as i64, Tile { bg: colour, ch, fg: INK, tall: false });
     }
     let typing = n < len;
     if (typing || ((tl * 2.2) as i64) % 2 == 0) && start + n < COLS - 1 {

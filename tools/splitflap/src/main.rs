@@ -54,17 +54,37 @@ fn make_face(t: &Tile, pal: &mut Pal) -> Vec<u8> {
         }
     }
     if t.ch != ' ' {
-        let g = font::glyph(t.ch);
-        let (x0, y0) = (2usize, 2usize);
-        for (gy, row) in g.iter().enumerate() {
-            for gx in 0..5 {
-                if row & (1 << (4 - gx)) != 0 {
-                    // 2x2 cells grown by 1px: bold stroke that fills the flap
-                    for dy in 0..3 {
-                        for dx in 0..3 {
-                            let (x, y) = (x0 + gx * 2 + dx, y0 + gy * 2 + dy);
-                            if x < TW - 1 && y < TH - 1 {
-                                px[y * TW + x] = t.fg;
+        if t.tall {
+            // 9-row cell, 2x2 pixel cells (1px bolder horizontally), rows 0-8 at y 1..18
+            let g = font::glyph9(t.ch);
+            let (x0, y0) = (2usize, 1usize);
+            for (gy, row) in g.iter().enumerate() {
+                for gx in 0..5 {
+                    if row & (1 << (4 - gx)) != 0 {
+                        for dy in 0..2 {
+                            for dx in 0..3 {
+                                let (x, y) = (x0 + gx * 2 + dx, y0 + gy * 2 + dy);
+                                if x < TW - 1 && y < TH - 1 {
+                                    px[y * TW + x] = t.fg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            let g = font::glyph(t.ch);
+            let (x0, y0) = (2usize, 2usize);
+            for (gy, row) in g.iter().enumerate() {
+                for gx in 0..5 {
+                    if row & (1 << (4 - gx)) != 0 {
+                        // 2x2 cells grown by 1px: bold stroke that fills the flap
+                        for dy in 0..3 {
+                            for dx in 0..3 {
+                                let (x, y) = (x0 + gx * 2 + dx, y0 + gy * 2 + dy);
+                                if x < TW - 1 && y < TH - 1 {
+                                    px[y * TW + x] = t.fg;
+                                }
                             }
                         }
                     }
@@ -222,7 +242,7 @@ fn main() {
     let mut out = Out { frames: vec![] };
     let mut prev: Vec<u8> = vec![];
     let mut stills: Vec<(String, Vec<u8>)> = vec![];
-    let still_times: Vec<f64> = (0..12).map(|i| i as f64 * 5.0 + 2.5).chain([0.3, 0.6, 5.3, 12.3]).collect();
+    let still_times: Vec<f64> = (0..SCENES).map(|i| i as f64 * 5.0 + 2.5).chain([0.3, 0.6, 5.3, 12.3]).collect();
     let steps = (LOOP_SECS / STEP).round() as usize;
 
     for step in 0..steps {

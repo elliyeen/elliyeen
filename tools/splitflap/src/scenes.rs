@@ -436,7 +436,7 @@ fn dart(tl: f64) -> Board {
     b
 }
 
-// ---------- 6. WE LIKE TO CODE IN [LANGUAGE] ----------
+// ---------- 6. WE BUILD IN [LANGUAGE] ----------
 fn language(k: usize, tl: f64) -> Board {
     let (name, colour) = LANGS[k];
     let win: Rgb = [0x18, 0x1B, 0x1A];
@@ -453,7 +453,7 @@ fn language(k: usize, tl: f64) -> Board {
     let prompt_bg: Rgb = [0x0F, 0x3A, 0x1F];
     set_tile(&mut b, 4, 5, Tile { bg: prompt_bg, ch: '>', fg: GREEN });
     set_tile(&mut b, 4, 6, Tile { bg: prompt_bg, ch: '_', fg: GREEN });
-    let prefix = "WE LIKE TO CODE IN ";
+    let prefix = "WE BUILD IN ";
     put_text(&mut b, 4, 9, prefix, [0xF2, 0xF2, 0xF2], win);
     let start = 9 + prefix.len();
     let len = name.len();

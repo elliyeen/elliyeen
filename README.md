@@ -38,6 +38,12 @@ A payment-authorization checker measured against a baseline, holdouts and automa
 - **Ahead / Aliya** · live product, source private · [aheadjobs.com](https://aheadjobs.com). Matches companies and talent on evidence, with human approval and candidate consent before any introduction. Not inspectable here.
 - **Static sites:** [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/) ([source](https://github.com/elliyeen/associatedtrainingservices)) and [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) ([source](https://github.com/elliyeen/savannah-pcs)). Websites I built, with accessibility and performance work visible in the commit history. Customer scope and outcomes are not documented here, and each business's own claims are its own.
 
+## Activity
+
+<img src="assets/contributions.png" width="804" alt="Split-flap style grid of my GitHub contributions for 2025-11-23 to 2026-11-22: 266 contributions on 31 active days out of 365, with the busiest day at 50. Generated from GitHub's contribution data.">
+
+One tile per real day, drawn from GitHub's own `contributionCalendar` on 2026-11-22. Nothing is added or smoothed. It is a snapshot and does not update by itself, so GitHub's native contribution graph on my profile page is the live record.
+
 ## Pick a path
 
 - **Forward deployed / enterprise delivery (start here):** [Route A](docs/github-portfolio/routes/forward-deployed-engineer.md), with the seven FDE capabilities and the evidence for each

@@ -1,0 +1,9 @@
+[package]
+name = "contrib"
+version = "0.1.0"
+edition = "2021"
+description = "Split-flap style rendering of real GitHub contribution counts (PNG)"
+publish = false
+
+[dependencies]
+png = "0.17"

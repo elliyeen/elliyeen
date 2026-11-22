@@ -5,56 +5,55 @@
   </picture>
 </p>
 
-# Engineering secure Enterprise AI systems at scale.
+# Forward Deployed AI Engineer | Enterprise Systems | Cybersecurity | Rust & TypeScript
 
-I build secure, measurable AI and software systems, from discovery and architecture through implementation, testing and handoff, with a focus on securing agent-based systems. Dallas, TX.
+**I turn complex business problems into secure, working software.**
+
+Over 20 years of combined experience across military service, information technology, and super intelligence. Dallas, TX. Interested in remote forward-deployed roles.
 
 [Website](https://www.elliyeen.com) · [LinkedIn](https://www.linkedin.com/in/abbasabdullah) · [Work with me](WORK_WITH_US.md)
 
-## Where to start
+## How I work
 
-- **Forward deployed / enterprise delivery:** [Route A](docs/github-portfolio/routes/forward-deployed-engineer.md)
+Understand the customer problem → find the constraint → design → engineer → test independently → deploy → measure the outcome.
+
+Every project below says how far it got along that line, and what is not proven.
+
+## Flagship work
+
+**[Screenwriter](docs/github-portfolio/case-studies/screenwriter.md)** · live product, private beta · [live app](https://write.elliyeen.com) · [public source (v0.6.3)](https://github.com/elliyeen/screenwriter)
+A private place to write screenplays, books and scripts in any browser, with exact page formats and print-ready export. Built from research into what writers complain about in existing tools. Rule-based, no AI model. Cloudflare Workers, D1, Durable Objects, R2. 27 unit checks pass on a fresh clone. No third-party security audit. No user figures published.
+
+**[PayBlue](docs/github-portfolio/case-studies/payblue.md)** · concept and early prototype · [site](https://payblue.app)
+An idea to protect Texas benefit cards by moving the secret from the card to a protected identity on the phone. The front end and a Rust API skeleton exist. Sign-in, wallet, transactions and cryptography are **not built yet**. No live payments, and no approval, certification or endorsement by any government body is claimed. Source is private.
+
+**[CLEARED benchmark](docs/github-portfolio/case-studies/cleared.md)** · benchmark on synthetic data · [source](https://github.com/elliyeen/cleared-public)
+A payment-authorization checker measured against a baseline, holdouts and automatic safety gates, with a regression reported and not hidden. Reproduces with a few commands. Deterministic code, no model, no customers or revenue.
+
+## More work
+
+- **[KAI × DART](docs/github-portfolio/case-studies/kai-dart.md)** · demonstration on synthetic data · [demo](https://elliyeen.github.io/kai-dart/platform) · [source](https://github.com/elliyeen/kai-dart). A station fix only counts when a different, independent inspector accepts the evidence. Not connected to live DART data, and not affiliated with or endorsed by DART.
+- **[CAC/PIV authentication](docs/github-portfolio/case-studies/cac-piv.md)** · sanitized reference · [source](https://github.com/elliyeen/cac-piv-pki-authentication). Smart-card sign-in without trusting spoofable identity headers. 60 tests pass on a fresh clone. Synthetic certificates only; not a production system.
+- **[Engineering factory](docs/github-portfolio/case-studies/engineering-factory.md)** · tested in a synthetic sandbox · [source](https://github.com/elliyeen/factory-sandbox). Gates that stop AI coding agents from approving or merging their own work. 12 of 14 certification tests pass; two are blocked, so it is **not certified**.
+- **Ahead / Aliya** · live product, source private · [aheadjobs.com](https://aheadjobs.com). Matches companies and talent on evidence, with human approval and candidate consent before any introduction. Not inspectable here.
+- **Static sites:** [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/) ([source](https://github.com/elliyeen/associatedtrainingservices)) and [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) ([source](https://github.com/elliyeen/savannah-pcs)). Websites I built, with accessibility and performance work visible in the commit history. Customer scope and outcomes are not documented here, and each business's own claims are its own.
+
+## Pick a path
+
+- **Forward deployed / enterprise delivery (start here):** [Route A](docs/github-portfolio/routes/forward-deployed-engineer.md), with the seven FDE capabilities and the evidence for each
 - **AI architecture, agentic systems, ML engineering:** [Route B](docs/github-portfolio/routes/ai-architect.md)
 - **AI security and trust and safety:** [Route C](docs/github-portfolio/routes/ai-security.md)
 
-Every capability I claim is mapped to something you can open in the [skills-to-evidence matrix](docs/github-portfolio/evidence-matrix.md), including the gaps.
-
-## Selected engineering work
-
-**[Screenwriter](https://write.elliyeen.com)** · live product, private beta · [public source snapshot (v0.6.3)](https://github.com/elliyeen/screenwriter)
-One private place for screenplays, books, podcast scripts, research and journals, with exact page formats and print-ready export. Rule-based layout, no AI model. Cloudflare Workers, D1, Durable Objects, R2. Published [threat model and known gaps](https://github.com/elliyeen/screenwriter/blob/main/docs/SECURITY.md). No third-party security audit. The active repository is private and ahead of the public snapshot.
-
-**[CLEARED benchmark](https://github.com/elliyeen/cleared-public)** · benchmark on synthetic data · [case study](docs/github-portfolio/case-studies/cleared.md)
-A payment-authorization checker measured against a baseline, holdouts and automatic safety gates, with a regression reported and not hidden. Reproduces with a few commands. Deterministic code, no model, no customers or revenue.
-
-**[KAI × DART](https://www.elliyeen.com/dart/)** · demonstration on synthetic data · [source](https://github.com/elliyeen/kai-dart) · [case study](docs/github-portfolio/case-studies/kai-dart.md)
-Station-quality intelligence where a fix only counts when a different, independent inspector accepts the evidence. Sits beside systems such as Maximo. Not connected to live DART data, and not affiliated with or endorsed by DART.
-
-**[CAC/PIV authentication](https://github.com/elliyeen/cac-piv-pki-authentication)** · sanitized reference · [case study](docs/github-portfolio/case-studies/cac-piv.md)
-Smart-card sign-in without trusting spoofable identity headers: certificate chain and CRL validation, header provenance, revocable sessions. 60 tests pass on a fresh clone. Synthetic certificates only; OCSP not implemented; not a production system.
-
-**[Engineering factory](https://github.com/elliyeen/factory-sandbox)** · tested in a synthetic sandbox · [case study](docs/github-portfolio/case-studies/engineering-factory.md)
-Gates that stop AI coding agents from approving or merging their own work. 12 of 14 certification tests pass; two are blocked, so it is **not certified**.
-
-**[Ahead / Aliya](https://aheadjobs.com)** · live product, source private
-Matching companies and talent on evidence of what needs to get done, with deterministic filtering before AI, human approval gates and candidate consent before any introduction. The source is private, so this is not inspectable here.
-
-## How I work
-
-Define the failure and the acceptance criteria first. Build the smallest thing that removes it. Verify with tests and security review that someone else can re-run. Say plainly what it does not do.
+Every capability I claim is mapped to something you can open in the [skills-to-evidence matrix](docs/github-portfolio/evidence-matrix.md), including the gaps. The latest [audit](docs/github-portfolio/fde-audit.md) records what was checked and what is missing.
 
 ## Skills, with evidence
 
 - **Languages:** Rust, TypeScript, Python, Bash.
 - **Platforms:** Cloudflare Workers, D1, Durable Objects, R2, Pages; GitHub Actions.
 - **Agents and protocols:** Model Context Protocol, Claude Code, human-in-the-loop approval gates.
-- **Security:** PKI and X.509, identity boundaries, threat modeling, architecture decision records, dependency auditing in CI, data-loss-prevention policy and data inventory (private work).
-- **Compliance:** SOC 2 and ISO 27001 policies are drafts for my own products. There is no audit or certification, and no public evidence for other frameworks. See the [gap assessment](docs/github-portfolio/evidence-matrix.md#gap-assessment).
-
-## Other public work
-
-[Savannah PCS](https://elliyeen.github.io/savannah-pcs/) · [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/)
+- **Security:** PKI and X.509, identity boundaries, threat modeling, architecture decision records, dependency auditing in CI.
+- **Compliance:** SOC 2 and ISO 27001 policies are drafts for my own products. There is no audit or certification. See the [gap assessment](docs/github-portfolio/evidence-matrix.md#gap-assessment).
 
 ## Contact
 
-[LinkedIn](https://www.linkedin.com/in/abbasabdullah)
+[LinkedIn](https://www.linkedin.com/in/abbasabdullah) · [Website](https://www.elliyeen.com) · [Work with me](WORK_WITH_US.md)

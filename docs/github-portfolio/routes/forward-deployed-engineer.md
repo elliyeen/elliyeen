@@ -31,3 +31,19 @@ See [CLEARED case study](../case-studies/cleared.md): a payment-authorization ch
 ## What this route does not show
 
 Customer deployments, production traffic, quantified ROI, or cross-team leadership. See the [gap assessment](../evidence-matrix.md#gap-assessment).
+
+## Seven capabilities, with evidence
+
+Levels are defined in the [evidence matrix](../evidence-matrix.md). "Gap" means no evidence was found.
+
+| # | Capability | Evidence | Level | Gap or limit |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Customer discovery | Writer-complaint research and ranked user stories behind Screenwriter | Private | Not inspectable by readers |
+| 2 | End-to-end engineering | [Screenwriter](../case-studies/screenwriter.md) (27 unit checks reproduced); static sites [Associated Training Services](https://elliyeen.github.io/associatedtrainingservices/) and [Savannah PCS](https://elliyeen.github.io/savannah-pcs/) | Reproduced, Public | Customer scope and outcomes for the two sites are not documented |
+| 3 | AI and architecture | [KAI × DART](../case-studies/kai-dart.md), [CLEARED](../case-studies/cleared.md) | Public, Reproduced | Synthetic data. No production LLM agents are evidenced publicly |
+| 4 | Security and reliability | [CLEARED](../case-studies/cleared.md), [CAC/PIV](../case-studies/cac-piv.md), [Screenwriter threat model](https://github.com/elliyeen/screenwriter/blob/main/docs/SECURITY.md) | Reproduced, Public | [PayBlue](../case-studies/payblue.md) security is design only. Security Gatekeeper not found. No third-party audit |
+| 5 | Business impact | None | None found | No baseline, customer or revenue figure exists |
+| 6 | Communication | Case studies with identical sections and plain language | Public | No reader feedback recorded |
+| 7 | Verifiable delivery | Issues and PRs on this repository, reproducible tests, rollback tag | Public | No independent reviewer sign-off yet. No documented user feedback |
+
+Case-study section order used for new pages: customer problem, research evidence, my role, constraints, architecture, implementation, security, deployment status, reproducible validation, measurable results, limitations, next step.

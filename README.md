@@ -21,13 +21,13 @@ Every project below says how far it got along that line, and what is not proven.
 
 ## Flagship work
 
-**[Screenwriter](docs/github-portfolio/case-studies/screenwriter.md)** · live product, private beta · [live app](https://write.elliyeen.com) · [public source (v0.6.3)](https://github.com/elliyeen/screenwriter)
+**[Screenwriter](docs/github-portfolio/case-studies/screenwriter.md)** · live product, private beta · [live app](https://write.elliyeen.com) · [public source (v0.6.3)](https://github.com/elliyeen/screenwriter)<br>
 A private place to write screenplays, books and scripts in any browser, with exact page formats and print-ready export. Built from research into what writers complain about in existing tools. Rule-based, no AI model. Cloudflare Workers, D1, Durable Objects, R2. 27 unit checks pass on a fresh clone. No third-party security audit. No user figures published.
 
-**[PayBlue](docs/github-portfolio/case-studies/payblue.md)** · concept and early prototype · [site](https://payblue.app)
+**[PayBlue](docs/github-portfolio/case-studies/payblue.md)** · concept and early prototype · [site](https://payblue.app)<br>
 An idea to protect Texas benefit cards by moving the secret from the card to a protected identity on the phone. The front end and a Rust API skeleton exist. Sign-in, wallet, transactions and cryptography are **not built yet**. No live payments, and no approval, certification or endorsement by any government body is claimed. Source is private.
 
-**[CLEARED benchmark](docs/github-portfolio/case-studies/cleared.md)** · benchmark on synthetic data · [source](https://github.com/elliyeen/cleared-public)
+**[CLEARED benchmark](docs/github-portfolio/case-studies/cleared.md)** · benchmark on synthetic data · [source](https://github.com/elliyeen/cleared-public)<br>
 A payment-authorization checker measured against a baseline, holdouts and automatic safety gates, with a regression reported and not hidden. Reproduces with a few commands. Deterministic code, no model, no customers or revenue.
 
 ## More work

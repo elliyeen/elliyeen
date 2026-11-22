@@ -1,0 +1,1 @@
+/Users/yaqeen/elliyeen-profile/tools/contrib/target/release/contrib: /Users/yaqeen/elliyeen-profile/tools/contrib/src/../../splitflap/src/font.rs /Users/yaqeen/elliyeen-profile/tools/contrib/src/main.rs

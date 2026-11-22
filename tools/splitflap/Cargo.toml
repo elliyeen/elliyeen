@@ -1,0 +1,13 @@
+[package]
+name = "splitflap"
+version = "0.1.0"
+edition = "2021"
+description = "Deterministic generator for the ELLIYEEN split-flap profile board (GIF + static PNG)"
+publish = false
+
+[dependencies]
+gif = "0.13"
+png = "0.17"
+
+[profile.release]
+opt-level = 3

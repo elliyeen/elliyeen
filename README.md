@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/splitflap-static.png">
+    <img src="assets/splitflap.gif" width="756" alt="Animated split-flap board labeled ELLIYEEN. It cycles through: PEACE WORLD! I'M ABDULLAH; a tropical beach at sunset; the Earth; a Formula 1 car driving left to right; a DART light-rail train moving right to left; then WE LIKE TO CODE IN Rust, TypeScript, JavaScript, HTML, Python, Go and CSS. The loop lasts 60 seconds.">
+  </picture>
+</p>
+
 # Engineering secure Enterprise AI systems at scale.
 
 I build secure, measurable AI and software systems, from discovery and architecture through implementation, testing and handoff, with a focus on securing agent-based systems. Dallas, TX.

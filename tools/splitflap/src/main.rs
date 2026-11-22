@@ -11,12 +11,11 @@ mod scenes;
 use scenes::*;
 use std::{borrow::Cow, collections::HashMap, fs::File, io::BufWriter, path::PathBuf};
 
-const TW: usize = 20;
-const TH: usize = 24;
 const HALF: usize = TH / 2;
 const FRX: usize = 18; // frame width left/right
-const FT: usize = 42; // frame top (label plate)
-const FB: usize = 18; // frame bottom
+const FT: usize = 18; // frame top
+const FB: usize = 36; // frame bottom (label plate)
+const TRANSPARENT: u8 = 0; // palette slot 0 is reserved for the rounded corners
 const W: usize = COLS * TW + 2 * FRX;
 const H: usize = ROWS * TH + FT + FB;
 const STEP: f64 = 0.05; // 20 fps simulation; identical frames are merged
@@ -56,14 +55,14 @@ fn make_face(t: &Tile, pal: &mut Pal) -> Vec<u8> {
     }
     if t.ch != ' ' {
         let g = font::glyph(t.ch);
-        let (x0, y0) = (3usize, 2usize);
+        let (x0, y0) = (2usize, 2usize);
         for (gy, row) in g.iter().enumerate() {
             for gx in 0..5 {
                 if row & (1 << (4 - gx)) != 0 {
-                    // 3x3 cells: glyph fills the flap like a real split-flap character
+                    // 2x2 cells grown by 1px: bold stroke that fills the flap
                     for dy in 0..3 {
                         for dx in 0..3 {
-                            let (x, y) = (x0 + gx * 3 + dx, y0 + gy * 3 + dy);
+                            let (x, y) = (x0 + gx * 2 + dx, y0 + gy * 2 + dy);
                             if x < TW - 1 && y < TH - 1 {
                                 px[y * TW + x] = t.fg;
                             }
@@ -104,10 +103,9 @@ fn compose(from: &[u8], to: &[u8], p: f64) -> Vec<u8> {
 }
 
 struct Anim {
-    from: Tile,
-    to: Tile,
+    seq: Vec<Tile>, // from, scramble..., to
     start: f64,
-    dur: f64,
+    each: f64, // seconds per flap
 }
 struct Cell {
     cur: Tile,
@@ -137,7 +135,7 @@ fn draw_text(cv: &mut [u8], s: &str, x0: usize, y0: usize, scale: usize, gap: us
     }
 }
 
-/// Light, beveled frame with an engraved ELLIYEEN plate.
+/// Light, beveled, rounded frame with an engraved ELLIYEEN plate under the board.
 fn draw_frame(pal: &mut Pal) -> Vec<u8> {
     let mid = pal.idx([0xEC, 0xE9, 0xE4]);
     let hi = pal.idx([0xFF, 0xFF, 0xFF]);
@@ -145,10 +143,9 @@ fn draw_frame(pal: &mut Pal) -> Vec<u8> {
     let dark = pal.idx([0x2B, 0x2B, 0x2B]);
     let darker = pal.idx([0x14, 0x14, 0x14]);
     let rim = pal.idx([0x70, 0x6D, 0x68]);
-    let ink = pal.idx([0x3A, 0x3A, 0x3A]);
+    let ink = pal.idx([0x4A, 0x4A, 0x4A]);
     let screw = pal.idx([0xC9, 0xC4, 0xBB]);
     let mut cv = vec![mid; W * H];
-    // outer bevel
     rect(&mut cv, 0, 0, W, 3, hi);
     rect(&mut cv, 0, 0, 3, H, hi);
     rect(&mut cv, 0, H - 3, W, 3, lo);
@@ -161,17 +158,18 @@ fn draw_frame(pal: &mut Pal) -> Vec<u8> {
     rect(&mut cv, bx, by + bh - 2, bw, 2, rim);
     rect(&mut cv, bx + bw - 2, by, 2, bh, rim);
     rect(&mut cv, FRX - 2, FT - 2, COLS * TW + 4, ROWS * TH + 4, pal.idx(BOARD_BG));
-    // engraved label
+    // engraved label under the board
     let label = "ELLIYEEN";
-    let (scale, gap) = (3usize, 7usize);
+    let (scale, gap) = (2usize, 6usize);
     let lw = label.len() * (5 * scale + gap) - gap;
-    let (lx, ly) = ((W - lw) / 2, (FT - 8 - 7 * scale) / 2 + 2);
+    let (lx, ly) = ((W - lw) / 2, FT + ROWS * TH + 14);
     draw_text(&mut cv, label, lx + 1, ly + 1, scale, gap, hi);
     draw_text(&mut cv, label, lx, ly, scale, gap, ink);
-    // corner screws
-    for &(sx, sy) in &[(12usize, 12usize), (W - 13, 12), (12, H - 13), (W - 13, H - 13)] {
-        for dy in 0..7 {
-            for dx in 0..7 {
+    // small screws either side of the label
+    for &sx in &[FRX + 10, W - FRX - 11] {
+        let sy = ly + 7;
+        for dy in 0..7usize {
+            for dx in 0..7usize {
                 let (ox, oy) = (dx as i32 - 3, dy as i32 - 3);
                 if ox * ox + oy * oy <= 10 {
                     cv[(sy + dy - 3) * W + sx + dx - 3] = screw;
@@ -180,12 +178,23 @@ fn draw_frame(pal: &mut Pal) -> Vec<u8> {
         }
         rect(&mut cv, sx - 2, sy, 5, 1, lo);
     }
+    // rounded corners: transparent outside the arc
+    let rad = 16i32;
+    for y in 0..H as i32 {
+        for x in 0..W as i32 {
+            let cx = x.clamp(rad, W as i32 - 1 - rad);
+            let cy = y.clamp(rad, H as i32 - 1 - rad);
+            if (x - cx) * (x - cx) + (y - cy) * (y - cy) > rad * rad {
+                cv[y as usize * W + x as usize] = TRANSPARENT;
+            }
+        }
+    }
     cv
 }
 
 fn stagger(r: usize, c: usize) -> f64 {
     let jitter = (((r * 31 + c * 17) % 11) as f64) * 0.008;
-    c as f64 * 0.010 + r as f64 * 0.015 + jitter
+    c as f64 * 0.012 + r as f64 * 0.02 + jitter
 }
 
 struct Out {
@@ -202,7 +211,7 @@ fn main() {
         std::fs::create_dir_all(d).unwrap();
     }
 
-    let mut pal = Pal { list: vec![], map: HashMap::new() };
+    let mut pal = Pal { list: vec![[0xFF, 0x00, 0xFF]], map: HashMap::new() }; // slot 0 = transparent corners
     let frame_bg = draw_frame(&mut pal);
     let mut faces: HashMap<Tile, Vec<u8>> = HashMap::new();
 
@@ -225,26 +234,41 @@ fn main() {
                 let i = r * COLS + c;
                 let cell = &mut cells[i];
                 if let Some(a) = &cell.anim {
-                    if t >= a.start + a.dur {
-                        cell.cur = a.to;
+                    if t >= a.start + a.each * (a.seq.len() - 1) as f64 {
+                        cell.cur = *a.seq.last().unwrap();
                         cell.anim = None;
                     }
                 }
                 if cell.anim.is_none() && cell.cur != target[i] {
-                    let (delay, dur) = if tl < 0.15 { (stagger(r, c), 0.35) } else { (0.0, 0.15) };
-                    cell.anim = Some(Anim { from: cell.cur, to: target[i], start: t + delay, dur });
+                    let mut seq = vec![cell.cur];
+                    let mut each = 0.07; // ongoing motion: quick flips so moving art stays legible
+                    let start = if tl < 0.15 {
+                        each = 0.15;
+                        // scene change: tiles shuffle through a few colours before settling
+                        let n = 1 + (hash(r, c) as usize % 3) + c * 2 / COLS;
+                        for k in 0..n {
+                            let j = hash(r + k * 7, c * 13 + step) as usize % target.len();
+                            seq.push(Tile::solid(target[j].bg));
+                        }
+                        t + stagger(r, c)
+                    } else {
+                        t
+                    };
+                    seq.push(target[i]);
+                    cell.anim = Some(Anim { seq, start, each });
                 }
                 let px: Vec<u8> = match &cell.anim {
-                    None => {
-                        faces.entry(cell.cur).or_insert_with(|| make_face(&cell.cur, &mut pal)).clone()
-                    }
+                    None => faces.entry(cell.cur).or_insert_with(|| make_face(&cell.cur, &mut pal)).clone(),
                     Some(a) => {
-                        let p = ((t - a.start) / a.dur).clamp(0.0, 1.0);
-                        let f = faces.entry(a.from).or_insert_with(|| make_face(&a.from, &mut pal)).clone();
-                        if p <= 0.0 {
+                        let u = ((t - a.start) / a.each).max(0.0);
+                        let k = (u.floor() as usize).min(a.seq.len() - 2);
+                        let p = (u - k as f64).clamp(0.0, 1.0);
+                        let (ft, tt) = (a.seq[k], a.seq[k + 1]);
+                        let f = faces.entry(ft).or_insert_with(|| make_face(&ft, &mut pal)).clone();
+                        if u <= 0.0 {
                             f
                         } else {
-                            let to = faces.entry(a.to).or_insert_with(|| make_face(&a.to, &mut pal)).clone();
+                            let to = faces.entry(tt).or_insert_with(|| make_face(&tt, &mut pal)).clone();
                             compose(&f, &to, p)
                         }
                     }
@@ -303,6 +327,7 @@ fn main() {
                 height: *h,
                 delay: *delay,
                 dispose: gif::DisposalMethod::Keep,
+                transparent: Some(TRANSPARENT),
                 buffer: Cow::Borrowed(buf),
                 ..gif::Frame::default()
             };
@@ -315,6 +340,7 @@ fn main() {
         e.set_color(png::ColorType::Indexed);
         e.set_depth(png::BitDepth::Eight);
         e.set_palette(flat.clone());
+        e.set_trns(vec![0u8]);
         e.write_header().unwrap().write_image_data(cv).unwrap();
     };
     // Static fallback = the first message, fully flipped in (t = 2.5 s)

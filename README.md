@@ -54,7 +54,7 @@ Every capability I claim is mapped to something you can open in the [skills-to-e
 
 ## Skills, with evidence
 
-- **Languages:** Rust, TypeScript, Python, Bash.
+- **Languages:** Rust, TypeScript, JavaScript, Python, Bash, HTML, CSS.
 - **Platforms:** Cloudflare Workers, D1, Durable Objects, R2, Pages; GitHub Actions.
 - **Agents and protocols:** Model Context Protocol, Claude Code, human-in-the-loop approval gates.
 - **Security:** PKI and X.509, identity boundaries, threat modeling, architecture decision records, dependency auditing in CI.

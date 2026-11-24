@@ -57,7 +57,8 @@ Every capability I claim is mapped to something you can open in the [skills-to-e
 - **Languages:** Rust, TypeScript, Python, Bash.
 - **Platforms:** Cloudflare Workers, D1, Durable Objects, R2, Pages; GitHub Actions.
 - **Agents and protocols:** Model Context Protocol, Claude Code, human-in-the-loop approval gates.
-- **Security:** PKI and X.509, identity boundaries, threat modeling, architecture decision records, dependency auditing in CI.
+- **Security engineering:** I apply the OWASP Top 10 for LLMs and manage IAM, RBAC, OPA/Rego policy, secrets and key management to keep AI/ML pipelines secure and compliant. Also PKI and X.509, identity boundaries, threat modeling, architecture decision records, dependency auditing in CI.
+- **Security operations and GRC:** I drive security automation, vulnerability management, GRC engineering audits and incident response, working from NIST AI RMF, ISO 27001, SOC 2, HIPAA, PCI-DSS, FedRAMP and CMMC. These are frameworks I work from, not certifications or audit results: nothing here has been independently audited, and the [evidence matrix](docs/github-portfolio/evidence-matrix.md) lists which of these have no public evidence yet.
 - **Compliance:** SOC 2 and ISO 27001 policies are drafts for my own products. There is no audit or certification. See the [gap assessment](docs/github-portfolio/evidence-matrix.md#gap-assessment).
 
 ## Contact
